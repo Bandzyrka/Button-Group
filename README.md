@@ -15,7 +15,17 @@ npm i button-group
   import 'button-group/button-group.js';
 </script>
 
-<button-group></button-group>
+<button-group >
+  <button > Sample Text </button>
+  <button  class="succes "> Sample Text </button>
+  <button class="error "> Sample Text </button>
+  <button class="progress "> Sample Text </button> //custom state classes 
+  <button disabled "> Sample Text </button>
+</button-group>
+
+<button-group direction="vertical" size="small"> //Props for vertical rendering, smaller size 
+  <button> sample text</button>
+</button-group>
 ```
 
 
