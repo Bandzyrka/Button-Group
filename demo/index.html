@@ -1,39 +1,202 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en-GB">
-<head>
-  <meta charset="utf-8">
-  <style>
-    body {
-      background: #ffffff;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-    }
-  </style>
-  <title>Button Group</title>
-</head>
-<body>
-  <div id="demo"></div>
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      body {
+        background: #ffffff;
+        display: flex;
+        justify-content: flex-start;
+        font-family: Nunito, sans-serif;
+      }
+      .state {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 0.5rem 3rem;
 
-  <script type="module">
-    import { html, render } from 'lit';
-    import '../dist/src/button-group.js';
+      }
+      .button_layout {
+        width: 100%;
+        display: flex;
+        justify-content: flex-start;
+        align-items: center;
+        margin: 3.3rem 4rem;
+      }
+    </style>
+    <title>Button Group</title>
+  </head>
+  <body>
+    <div id="demo"></div>
 
-    const title = 'Hello owc World!';
-    render(
-      html`
+    <script type="module">
+      import { html, render } from "lit";
+      import "../dist/src/button-group.js";
+
+      const title = "Hello owc World!";
+      render(
+        html`
       <link rel="preconnect" href="https://fonts.googleapis.com">
       <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://use.fontawesome.com/releases/v5.0.1/css/all.css" rel="stylesheet">
+      <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" />
       <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@600&display=swap" rel="stylesheet">
+      <h1 style="padding: 2rem;"> Button Group </h1>
+      <hr style="width:100%;text-align:left;margin-left:2rem;opacity:0.2;">
 
-        <button-group>
+     <div style="display: flex">
+      <div>
+        <div style="margin-left: 14rem">
+          <h3 style="font-weight: bold"> Variant: </h3>
+          <p> Default </p>
+        </div>
+        <h3 style = "margin-left: 3rem"> State: </h3>
+        <div class='state'">
+        <h4> Default </h4>
+          <button-group >
+            <button> Text button </button>  
+            <button> Text button </button>  
+            <button> Text button </button> 
+          </button-group> 
+        </div>
+        <div class='state'">
+        <h4> Hover </h4>
+          <button-group >
+            <button style='background-color: #94A8BC0D'"> Text button </button>  
+            <button> Text button </button>  
+            <button> Text button </button> 
+          </button-group> 
+        </div>
+        <div class='state'">
+          <h4> Active </h4>
+          <button-group >
+            <button class="active"> Text button </button>  
+            <button> Text button </button>  
+            <button> Text button </button> 
+            </button-group> 
+            </div>
+        <div class='state'">
+        <h4> Focus </h4>
+          <button-group >
+            <button style='background-color: #94A8BC26'> Text button </button>  
+            <button> Text button </button>  
+            <button> Text button </button> 
+          </button-group> 
+        </div>
+        <div class='state'">
+        <h4> Disabled </h4>
+          <button-group >
+            <button disabled> Text button </button>  
+            <button disabled> Text button </button>  
+            <button disabled> Text button </button> 
+          </button-group> 
+        </div>
+        <div class='state'">
+        <h4> Succes </h4>
+          <button-group >
+            <button class="succes "> Text button </button>  
+            <button > Text button </button>  
+            <button > Text button </button> 
+          </button-group> 
+        </div>
+        <div class='state'">
+        <h4> Error </h4>
+          <button-group >
+            <button class="error ">  Text button </button>  
+            <button >  Text button </button>  
+            <button >  Text button </button> 
+          </button-group> 
+        </div>
+      </div>
+      
+      <div style="margin-left: 5rem;">
+      <div style="margin-left: 14rem">
+        <h3 style="font-weight: bold"> Variant: </h3>
+        <p> Small </p>
+      </div>
+      <div class='button_layout' style="margin-top: 5.2rem">
+        <button-group size="small" >
           <button> Text button </button>  
           <button> Text button </button>  
           <button> Text button </button> 
         </button-group> 
-      `,
-      document.querySelector('#demo')
-    );
-  </script>
-</body>
+      </div>
+      <div class='button_layout'">
+        <button-group size="small" >
+          <button style='background-color: #94A8BC0D'"> Text button </button>  
+          <button> Text button </button>  
+          <button> Text button </button> 
+        </button-group> 
+      </div>
+      <div class='button_layout'">
+        <button-group size="small" >
+          <button class="active"> Text button </button>  
+          <button> Text button </button>  
+          <button> Text button </button> 
+          </button-group> 
+          </div>
+      <div class='button_layout'">
+        <button-group size="small" >
+          <button style='background-color: #94A8BC26'> Text button </button>  
+          <button> Text button </button>  
+          <button> Text button </button> 
+        </button-group> 
+      </div>
+      <div class='button_layout'">
+        <button-group size="small" >
+          <button disabled> Text button </button>  
+          <button disabled> Text button </button>  
+          <button disabled> Text button </button> 
+        </button-group> 
+      </div>
+      <div class='button_layout'">
+        <button-group size="small" >
+          <button class="succes "> Text button </button>  
+          <button > Text button </button>  
+          <button > Text button </button> 
+        </button-group> 
+      </div>
+      <div class='button_layout'">
+        <button-group size="small" >
+          <button class="error "> Text button </button>  
+          <button > Text button </button>  
+          <button > Text button </button> 
+        </button-group> 
+      </div>
+      </div>
+      
+      <div>
+      <div style="margin-left: 3rem">
+        <h3 style="font-weight: bold"> Direction: </h3>
+        <p> horizontal </p>
+      </div>
+      
+      <button-group direction="vertical" style="margin-top: 5rem">
+          <button> Text button </button>  
+          <button style='background-color: #94A8BC0D'> Text button </button>  
+          <button class="active"> Text button </button>  
+          <button style='background-color: #94A8BC26'> Text button </button> 
+          <button disabled> Text button </button>  
+          <button class="succes "> Text button </button>  
+          <button class="error "> Text button </button> 
+      </button-group>
+      
+      <button-group size="small" direction="vertical" style="margin-top: 5rem">
+          <button> Text button </button>  
+          <button style='background-color: #94A8BC0D'> Text button </button>  
+          <button class="active"> Text button </button>  
+          <button style='background-color: #94A8BC26'> Text button </button> 
+          <button disabled> Text button </button>  
+          <button class="succes "> Text button </button>  
+          <button class="error "> Text button </button> 
+      </button-group>
+
+
+      </div>
+        `,
+        document.querySelector("#demo")
+      );
+    </script>
+  </body>
 </html>

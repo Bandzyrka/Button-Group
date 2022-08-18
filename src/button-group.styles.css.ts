@@ -5,42 +5,31 @@ export const ButtonGroupCss = css`
     display: flex;
     flex-direction: row;
     box-sizing: border-box;
+    --button-height: 32px;
+    --button-width: 125px;
+    --font-size: 14px;
+    --border-color: #E7ECF0;
+    --bg-color: #FFFFFF00;
+    --text-color: #191C1B;
+    --font-family: Nunito, sans-serif
   }
   ::slotted(button) {
-    border: 2px solid #E7ECF0;
-    background-color: #FFFFFF00;
-    padding: 0.25rem 1.45rem;
-    text-align: center;
-    font-family: Nunito, sans-serif;
-    letter-spacing: 0px;
-    color: #191C1B;
-  }
-  ::slotted(button:first-child) {
+    height: var(--button-height);
+    width: var(--button-width);
+    border: 2px solid var(--border-color);
+    background-color: var(--bg-color);
     
-    border-top-left-radius: 4px;
-    border-bottom-left-radius: 4px;
-  }
-  ::slotted(button:last-child) {
-    border-top-right-radius: 4px;
-    border-bottom-right-radius: 4px;
-  }
-  ::slotted(button:not(:last-child)) {
-    border-right: none;
-  }
-  ::slotted(button:hover) {
-    background-color: #94A8BC0D;
-  } 
-  
-  ::slotted(button:active) {
-    background-color: #94A8BC26;
-  }
-  ::slotted(button:disabled) {
-    color: #B0BFCD;
-    pointer-events:none;
-  }
+    font-family: var(--font-family);
+    font-size: var(--font-size);
+    color: var(--text-color);
+    
+    letter-spacing: 0px;
+    text-align: center;
+    white-space: nowrap;
+    overflow: hidden;
 
-  ::slotted(button.active) {
-    background-color: #4599FF;
-    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
   }
-`;
+`
