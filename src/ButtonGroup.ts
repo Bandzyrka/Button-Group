@@ -1,27 +1,31 @@
 import { html, css, LitElement } from 'lit';
-import { property } from 'lit/decorators.js';
+import { ButtonGroupCss } from './button-group.styles.css'
+import { property} from 'lit/decorators.js';
 
 export class ButtonGroup extends LitElement {
-  static styles = css`
-    :host {
-      display: block;
-      padding: 25px;
-      color: var(--button-group-text-color, #000);
-    }
-  `;
-
-  @property({ type: String }) title = 'Hey there';
-
-  @property({ type: Number }) counter = 5;
-
-  __increment() {
-    this.counter += 1;
+  static get styles() {
+    return [ButtonGroupCss];
   }
-
-  render() {
+  @property()
+  active = -1
+  
+  connectedCallback() {
+    super.connectedCallback()
+    let buttons = this.shadowRoot?.host.querySelectorAll('button')
+    buttons?.forEach((button, i) =>{
+      button.addEventListener('click', () => {
+        buttons?.forEach((button) => button.classList.remove('active'));
+        button.className += 'active';
+      })
+    })
+  }
+  
+  
+  render() 
+  {
     return html`
-      <h2>${this.title} Nr. ${this.counter}!</h2>
-      <button @click=${this.__increment}>increment</button>
+    <slot></slot>
     `;
   }
 }
+
